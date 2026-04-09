@@ -70,3 +70,25 @@ on reserva.id_quarto=quartos.id_quarto;
 
 
 -- acabei caralhoooooo
+
+insert into quartos (tipo, valor_diaria)
+values ('SimplesKS', 120.00), ('DuploKS', 220.00);
+
+insert into hospede (nome)
+values ('Carlos Pereira'), ('Ana Oliveira'), ('Bruno costa'), ('Fernanda Lima'), ('Ricardo Alvez'), ('Juliana Mendes');
+
+insert into reserva (id_hospede, id_quarto, valor_diaria, dias, despesas)
+values
+(1, 2, 140.00, 1, 325.00),
+(3, 6, 2200.00, 1, 500.00),
+(4, 5, 200.00, 1, 328.00),
+(6, 8, 260.00, 1, 60.00),
+(2, 7, 240.00, 1, 4000.00),
+(4, 3, 160.00, 1, 560.00);
+
+
+
+SELECT * FROM quartos
+ORDER BY nome ASC;
+SELECT * FROM hospede;
+select * from reserva;
