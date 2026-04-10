@@ -86,7 +86,36 @@ values
 (2, 7, 240.00, 1, 4000.00),
 (4, 3, 160.00, 1, 560.00);
 
+SELECT * FROM quartos;
+SELECT * FROM hospede;
+select * from reserva;
 
+-- Esse codigo vai mostrar na tabela reserva a soma total  das despesas e vai nomerar(AS) como total_faturado
+select sum(despesas) AS total_faturado
+from reserva;
+
+-- Esse codigo vai mostrar na tabela reserva a soma total doas reservas, e vai nomerar como total_reservas
+select count(*) AS total_reserva
+from resrva;
+
+-- Exemplo com JOIN = GROUP BY -Total gasto pro hospede
+
+select 
+hospede.nome,
+sum(reserva.despesas) AS total_gasto
+from reserva
+INNER JOIN hospede
+on reserva.id_hospede = hospede.id_hospede
+group by hospede.nome;
+
+-- Quantas reservas por tipo de quarto
+SELECT
+quartos.tipo,
+COUNT(reserva.id_reserva) AS quantidade
+FROM reserva
+INNER JOIN quartos
+ON reserva.id_quarto = quartos.id_quarto
+GROUP BY quartos.tipo;
 
 SELECT * FROM quartos
 ORDER BY nome ASC;
