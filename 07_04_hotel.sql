@@ -1,6 +1,5 @@
-create database hotel;
 use hotel;
-drop table quartos;
+
 create table quartos (
 id_quarto int auto_increment primary key not null,
 tipo varchar(200) not null,
@@ -80,16 +79,11 @@ values ('Carlos Pereira'), ('Ana Oliveira'), ('Bruno costa'), ('Fernanda Lima'),
 insert into reserva (id_hospede, id_quarto, valor_diaria, dias, despesas)
 values
 (1, 2, 140.00, 1, 325.00),
-(3, 6, 2200.00, 1, 500.00),
-(4, 5, 200.00, 1, 328.00),
-(6, 8, 260.00, 1, 60.00),
-(2, 7, 240.00, 1, 4000.00),
+(3, 3, 2200.00, 1, 500.00),
+(4, 2, 200.00, 1, 328.00),
+(6, 4, 260.00, 1, 60.00),
+(2, 2, 240.00, 1, 4000.00),
 (4, 3, 160.00, 1, 560.00);
-
-SELECT * FROM quartos;
-SELECT * FROM hospede;
-select * from reserva;
-
 -- Esse codigo vai mostrar na tabela reserva a soma(SUM) total  das despesas e vai nomerar(AS) como total_faturado
 select sum(despesas) AS total_faturado
 from reserva;
