@@ -54,7 +54,7 @@ FROM reserva
 inner join hospede
 on reserva.id_hospede=hospede.id_hospede 
 inner join quartos
-on reserva.id_hospede=hospede.id_hospede;
+on reserva.id_quarto=quartos.id_quarto;
 
 select
 hospede.nome,
@@ -90,11 +90,12 @@ SELECT * FROM quartos;
 SELECT * FROM hospede;
 select * from reserva;
 
--- Esse codigo vai mostrar na tabela reserva a soma total  das despesas e vai nomerar(AS) como total_faturado
+-- Esse codigo vai mostrar na tabela reserva a soma(SUM) total  das despesas e vai nomerar(AS) como total_faturado
 select sum(despesas) AS total_faturado
 from reserva;
 
--- Esse codigo vai mostrar na tabela reserva a soma total doas reservas, e vai nomerar como total_reservas
+-- Esse codigo vai mostrar na tabela reserva a soma total das reservas, e vai nomerar como total_reservas
+-- Count = QUANTIDADE
 select count(*) AS total_reserva
 from resrva;
 
@@ -117,6 +118,10 @@ INNER JOIN quartos
 ON reserva.id_quarto = quartos.id_quarto
 GROUP BY quartos.tipo;
 
+SELECT * FROM quartos
+ORDER BY nome ASC;
+SELECT * FROM hospede;
+select * from reserva;
 SELECT * FROM quartos
 ORDER BY nome ASC;
 SELECT * FROM hospede;
