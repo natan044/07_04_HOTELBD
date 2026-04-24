@@ -44,7 +44,7 @@ values
 ('Exploradores do Universo', 'Ficção Científica', 19.00),('Drama na Cidade', 'Drama', 12.50),('O Circo Mágico', 'Família', 11.75),('Histórias do Passado', 'Histórico', 18.50),('Aventura no Mar', 'Aventura', 14.00),
 ('Amor e Destino', 'Romance', 13.75);
 
-insert into locacao (id_cliente, id_filme, despezas, quantidade_dias)
+insert into locacao (id_cliente, id_filme, despesas, quantidade_dias)
 values (1, 5, 25.00, 3),(2, 12, 30.00, 5),(3, 8, 18.50, 2),(4, 20, 40.00, 7),(5, 2, 15.75, 1),
 (6, 17, 35.00, 4),(7, 11, 28.25, 3),(8, 3, 20.00, 2),(9, 14, 32.50, 5),(10, 7, 22.75, 3),
 (11, 1, 12.50, 1),(12, 19, 37.00, 6),(13, 9, 24.00, 2),(14, 12, 25.75, 1),(14, 25, 45.00, 7);
@@ -53,7 +53,7 @@ select cliente.id_cliente,
 filme.id_filme,
 filme.nome,
 filme.valor_fita,
-locacao.despezas,
+locacao.despesas,
 locacao.quantidade_dias
 from locacao
 inner join cliente
